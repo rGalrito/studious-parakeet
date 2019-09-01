@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: coinlite
+  labels:
+    app: coinlite
+spec:
+  clusterIP: None
+  selector:
+    app: coinlite
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: coinlitests
+spec:
+  serviceName: "coinlite"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: coinlite
+  template:
+    metadata:
+      labels:
+        app: coinlite
+    spec:
+      containers:
+      - name: coinlite
+        image: galrito/coinlite:latest 
+        volumeMounts:
+        - name: coinlitepvc
+          mountPath: /usr/share/coinlite
+  volumeClaimTemplates:
+  - metadata:
+      name: coinlitepvc
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
