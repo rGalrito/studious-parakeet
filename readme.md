@@ -3,7 +3,7 @@
 docker registry: https://cloud.docker.com/repository/registry-1.docker.io/galrito/coinlite
 
 ## Working notes
-
+`
 * docker installation
 	* https://gist.github.com/levsthings/0a49bfe20b25eeadd61ff0e204f50088
 * checksum validation
@@ -24,10 +24,12 @@ docker registry: https://cloud.docker.com/repository/registry-1.docker.io/galrit
 	- https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
 
 
-
+`
 
 
 ### Docker CIS Benchmark:
+
+
 
 ------------------------------------------------------------------------------
 Docker Bench for Security v1.3.4
