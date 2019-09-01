@@ -1,9 +1,25 @@
-#Studious-parakeet
+# Studious-parakeet
 
-docker registry: https://cloud.docker.com/repository/registry-1.docker.io/galrito/coinlite
+DockerHub registry: https://cloud.docker.com/repository/registry-1.docker.io/galrito/coinlite
+
+## Getting Started
+
+1. Clone repo and cd into it
+2. Make sure docker and kubernetes are installed and running
+	1. minikube -p test start 
+3. Build docket instance: docker built -t coinlite:latest .
+4. Create service and statefulset: kubectl create -f studiousparakeet.yaml
+	1. Monitor progress with: kubectl get pod -w -l  app=coinlite 
+
+
+## Docker CIS benchmarking
+In order to perform the Docker CIS test: bash docker_cis_test.sh
+
+
+
 
 ## Working notes
-`
+
 * docker installation
 	* https://gist.github.com/levsthings/0a49bfe20b25eeadd61ff0e204f50088
 * checksum validation
@@ -14,8 +30,8 @@ docker registry: https://cloud.docker.com/repository/registry-1.docker.io/galrit
 *  kubernetes not working (Unable to connect to the server: dial tcp 192.168.99.101:8443: connect: no route to host)
 	https://neutrollized.blogspot.com/2018/01/unable-to-connect-to-server-dial-tcp.html
 	* removing VPN and restart kubernetes solved it
-* useful kubernetes commands
-	- from: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+* useful kubernetes commands 
+	https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 	- source <(kubectl completion zsh)
 * statefulsets
 	- https://kubernetes.io/docs/tutorials/stateful-application/basic-stateful-set/#creating-a-statefulset
@@ -24,7 +40,6 @@ docker registry: https://cloud.docker.com/repository/registry-1.docker.io/galrit
 	- https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
 
 
-`
 
 
 ### Docker CIS Benchmark:
