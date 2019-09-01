@@ -31,3 +31,5 @@ https://kubernetes.io/docs/tutorials/stateful-application/basic-stateful-set/#cr
 https://bogotobogo.com/DevOps/Docker/Docker_Kubernetes_StatefulSet.php
 # docker registry
 https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+# resource limits
+https://kubernetes.io/docs/tasks/administer-cluster/limit-storage-consumption/
