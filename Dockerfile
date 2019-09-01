@@ -17,5 +17,7 @@ RUN sha256sum -c litecoin-0.17.1-linux-signatures.asc 2>&1 | grep OK
 RUN tar xvzf litecoin-0.17.1-x86_64-linux-gnu.tar.gz
 WORKDIR litecoin-0.17.1/bin
 # run daemon
-RUN ./litecoind
+CMD ./litecoind
 #HEALTHCHECK --interval=5m --timeout=3s CMD ps | grep litecoind | wc -l 
+
+
